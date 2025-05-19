@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import BookingStepper from './BookingStepper';
-import SkipSelectionGrid from './SkipSelectionGrid';
-import SelectedSkipSummary from './SelectedSkipSummary';
-import PageHeader from './PageHeader';
+import BookingStepper from '../components/BookingStepper';
+import SkipSelectionGrid from '../components/SkipSelectionGrid';
+import SelectedSkipSummary from '../components/SelectedSkipSummary';
 import { Skip } from '../types';
 import { skips } from '../data';
 

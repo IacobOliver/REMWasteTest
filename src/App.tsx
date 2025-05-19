@@ -1,9 +1,9 @@
 import React from 'react';
-import SkipSelectionPage from './components/SkipSelectionPage';
+import SkipSelectionPage from './pages/SkipSelectionPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-background">
       <SkipSelectionPage />
     </div>
   );

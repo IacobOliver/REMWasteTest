@@ -18,7 +18,7 @@ const steps = [
 
 const BookingStepper: React.FC<BookingStepperProps> = ({ currentStep }) => {
   return (
-    <div className="w-full bg-[#111827] text-white py-6">
+    <div className="w-full bg-background text-white py-6">
       <div className="container mx-auto px-4">
         <div className="hidden md:flex items-center justify-between">
           {steps.map((step, index) => {
@@ -33,17 +33,17 @@ const BookingStepper: React.FC<BookingStepperProps> = ({ currentStep }) => {
                     <div 
                       className={clsx(
                         'h-full transition-colors duration-300',
-                        isActive ? 'bg-blue-500' : 'bg-gray-700'
+                        isActive ? 'bg-teal-400' : 'bg-gray-700'
                       )}
                     />
                   </div>
                 )}
                 
-                <div className="flex items-center">
+                <div className="flex items-center cursor-pointer">
                   <StepIcon 
                     className={clsx(
                       'w-6 h-6 mr-2',
-                      isActive ? 'text-blue-500' : 'text-gray-400'
+                      isActive ? 'text-teal-400' : 'text-gray-400'
                     )}
                   />
                   <span 
@@ -67,7 +67,7 @@ const BookingStepper: React.FC<BookingStepperProps> = ({ currentStep }) => {
               <div className="relative">
                 <div className="overflow-hidden h-2 rounded-full bg-gray-700">
                   <motion.div 
-                    className="h-full bg-blue-500"
+                    className="h-full bg-teal-400"
                     initial={{ width: 0 }}
                     animate={{ width: `${(currentStep / steps.length) * 100}%` }}
                     transition={{ duration: 0.5 }}
@@ -81,7 +81,7 @@ const BookingStepper: React.FC<BookingStepperProps> = ({ currentStep }) => {
             <div className="flex items-center">
               {(() => {
                 const MobileStepIcon = steps[currentStep - 1].icon;
-                return <MobileStepIcon className="w-5 h-5 text-blue-500 mr-2" />;
+                return <MobileStepIcon className="w-5 h-5 text-teal-400 mr-2" />;
               })()}
               <span className="text-sm font-medium text-white">
                 {steps[currentStep - 1].name}

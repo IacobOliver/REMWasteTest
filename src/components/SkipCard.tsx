@@ -20,43 +20,43 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
       variants={item}
       className={`
         relative rounded-xl overflow-hidden transition-all duration-300
-        ${isSelected ? 'ring-4 ring-teal-500 shadow-lg' : 'border border-gray-200 hover:border-teal-300 hover:shadow-md'} 
-        cursor-pointer bg-white
+        ${isSelected ? 'ring-4 ring-teal-400 shadow-teal-800/40' : 'border border-gray-700 hover:border-teal-400 hover:shadow-md'} 
+        cursor-pointer bg-gray-900 text-white
       `}
       onClick={onSelect}
       whileHover={{ y: -5 }}
     >
       <div className="p-4 pb-0">
-        <div className="relative overflow-hidden rounded-lg h-48 bg-gray-100">
+        <div className="relative overflow-hidden rounded-lg h-48 bg-gray-800">
           <img 
             src={skip.imageUrl} 
             alt={`${skip.size} Yard Skip`} 
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute top-3 right-3 rounded-full font-bold 
-            text-white text-sm px-3 py-1 bg-teal-600 shadow-md">
+            text-white text-sm px-3 py-1 bg-teal-500 shadow-md">
             {skip.size} Yards
           </div>
         </div>
 
         <div className="pt-4">
-          <h3 className="text-xl font-bold text-gray-900">{skip.size} Yard Skip</h3>
-          <p className="text-gray-600 mt-1 flex items-center">
-            <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full mr-2">
+          <h3 className="text-xl font-bold text-white">{skip.size} Yard Skip</h3>
+          <p className="text-gray-400 mt-1 flex items-center">
+            <span className="inline-block bg-yellow-900/30 text-yellow-300 text-xs px-2 py-1 rounded-full mr-2">
               {skip.hirePeriod} day hire period
             </span>
-            <button className="text-gray-400 hover:text-teal-600 transition-colors">
+            <button className="text-gray-500 hover:text-teal-400 transition-colors">
               <Info size={16} />
             </button>
           </p>
           
-          <div className="text-gray-500 mt-3 text-sm">
+          <div className="text-gray-400 mt-3 text-sm">
             <p>Perfect for: {skip.suitableFor}</p>
             <p className="mt-1">Approx. capacity: {skip.capacity}</p>
           </div>
           
           <div className="mt-4">
-            <span className="text-3xl font-bold text-teal-600">£{skip.price}</span>
+            <span className="text-3xl font-bold text-teal-400">£{skip.price}</span>
           </div>
         </div>
       </div>
@@ -67,8 +67,8 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
             w-full py-3 px-4 rounded-lg font-medium flex items-center justify-center
             transition-colors duration-300
             ${isSelected 
-              ? 'bg-teal-600 text-white hover:bg-teal-700' 
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}
+              ? 'bg-teal-500 text-white hover:bg-teal-600' 
+              : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}
           `}
           whileTap={{ scale: 0.98 }}
         >

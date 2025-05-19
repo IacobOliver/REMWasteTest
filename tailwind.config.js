@@ -4,6 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        background : "#111827",
+        cardBackground : "#0e182b",
         teal: {
           50: '#effcfb',
           100: '#d7f5f2',
