@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Info } from 'lucide-react';
+import { CheckCircle, Info, AlertTriangle } from 'lucide-react';
 import { Skip } from '../types';
 import { motion } from 'framer-motion';
 
@@ -29,10 +29,19 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
       <div className="p-4 pb-0">
         <div className="relative overflow-hidden rounded-lg h-48 bg-gray-800">
           <img 
-            src={skip.imageUrl} 
+            src={"images/4-yarder-skip.jpg"} 
             alt={`${skip.size} Yard Skip`} 
             className="w-full h-full object-cover object-center"
           />
+          
+          {/* Warning banner */}
+          {!skip.allowed_on_road && (
+            <div className="absolute bottom-3 left-3 flex items-center gap-2 bg-background text-yellow-300 text-xs font-medium px-3 py-1 rounded-full shadow-sm">
+              <AlertTriangle size={14} className="inline-block" />
+              Not Allowed On The Road
+            </div>
+          )}
+
           <div className="absolute top-3 right-3 rounded-full font-bold 
             text-white text-sm px-3 py-1 bg-teal-500 shadow-md">
             {skip.size} Yards
@@ -43,20 +52,15 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
           <h3 className="text-xl font-bold text-white">{skip.size} Yard Skip</h3>
           <p className="text-gray-400 mt-1 flex items-center">
             <span className="inline-block bg-yellow-900/30 text-yellow-300 text-xs px-2 py-1 rounded-full mr-2">
-              {skip.hirePeriod} day hire period
+              {skip.hire_period_days} day hire period
             </span>
             <button className="text-gray-500 hover:text-teal-400 transition-colors">
               <Info size={16} />
             </button>
           </p>
           
-          <div className="text-gray-400 mt-3 text-sm">
-            <p>Perfect for: {skip.suitableFor}</p>
-            <p className="mt-1">Approx. capacity: {skip.capacity}</p>
-          </div>
-          
           <div className="mt-4">
-            <span className="text-3xl font-bold text-teal-400">£{skip.price}</span>
+            <span className="text-3xl font-bold text-teal-400">£{skip.price_before_vat}</span>
           </div>
         </div>
       </div>

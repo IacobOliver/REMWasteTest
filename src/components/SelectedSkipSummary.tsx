@@ -22,9 +22,9 @@ const SelectedSkipSummary: React.FC<SelectedSkipSummaryProps> = ({ selectedSkip 
             <div className="flex items-center">
               <span className="text-xl font-bold">{selectedSkip.size} Yard Skip</span>
               <span className="mx-2 text-gray-400">•</span>
-              <span className="text-teal-400 text-xl font-bold">£{selectedSkip.price}</span>
+              <span className="text-teal-400 text-xl font-bold">£{selectedSkip.price_before_vat}</span>
             </div>
-            <span className="text-sm text-gray-400">{selectedSkip.hirePeriod} day hire</span>
+            <span className="text-sm text-gray-400">{selectedSkip.hire_period_days} day hire</span>
           </div>
         </div>
         
